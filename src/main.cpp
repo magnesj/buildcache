@@ -136,7 +136,7 @@ std::unique_ptr<bcache::program_wrapper_t> find_suitable_wrapper(
   std::exit(return_code);
 }
 
-[[noreturn]] void show_stats_and_exit() {
+    [[noreturn]] void show_stats_and_exit() {
   int return_code = 0;
   try {
     bcache::local_cache_t cache;
@@ -195,8 +195,8 @@ std::unique_ptr<bcache::program_wrapper_t> find_suitable_wrapper(
                 << (bcache::config::disable() ? "true" : "false") << "\n";
       std::cout << "  BUILDCACHE_READ_ONLY:              "
                 << (bcache::config::read_only() ? "true" : "false") << "\n";
-      std::cout << "  BUILDCACHE_ACCURACY:               "
-                << to_string(bcache::config::accuracy()) << "\n";
+      std::cout << "  BUILDCACHE_ACCURACY:               " << to_string(bcache::config::accuracy())
+                << "\n";
     }
   } catch (const std::exception& e) {
     std::cerr << "*** Unexpected error: " << e.what() << "\n";
@@ -223,7 +223,7 @@ std::unique_ptr<bcache::program_wrapper_t> find_suitable_wrapper(
   std::exit(return_code);
 }
 
-[[noreturn]] void print_version_and_exit() {
+    [[noreturn]] void print_version_and_exit() {
   // Print the BuildCache version.
   std::cout << "BuildCache version " << BUILDCACHE_VERSION_STRING << "\n"
             << BUILDCACHE_COPYRIGHT_STRING << "\n";
@@ -284,7 +284,7 @@ std::unique_ptr<bcache::program_wrapper_t> find_suitable_wrapper(
   std::exit(0);
 }
 
-[[noreturn]] void wrap_compiler_and_exit(int argc, const char** argv) {
+    [[noreturn]] void wrap_compiler_and_exit(int argc, const char** argv) {
   auto args = bcache::string_list_t(argc, argv);
   bool was_wrapped = false;
   int return_code = 0;
