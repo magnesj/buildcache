@@ -6,15 +6,15 @@ jobs:
   clang-format-job:
     runs-on: ubuntu-latest
     steps:
-    - name: Install clang-format 9.0
+    - name: Install clang-format 8.0
       run: |
-        sudo apt install clang-format-9.0
-        clang-format-9.0 --version
+        sudo apt install clang-format-8.0
+        clang-format-8.0 --version
     - uses: actions/checkout@v2
     - name: Check format - ApplicationCode
       run: |
         cd src
-        find -name *.h -o -name *.cpp -o -name *.inl | xargs clang-format-9.0 -i
+        find -name *.h -o -name *.cpp -o -name *.inl | xargs clang-format-8.0 -i
         git diff
     - uses: peter-evans/create-pull-request@v2
       with:
